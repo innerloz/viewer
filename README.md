@@ -1,27 +1,18 @@
 # Cube Viewer
 
-A simple React + TypeScript application that renders 8 colorful cubes in a line using Three.js. Fully responsive and optimized for desktop and mobile devices.
-
-## Features
-
-- 8 animated cubes positioned in a line, each with a unique color
-- Smooth rotation animation
-- Fully responsive design that works on mobile and desktop
-- Automatic scene resizing using ResizeObserver
-- Touch-optimized for mobile devices
-- Built with React, TypeScript, and Three.js (without react-three-fiber)
+A simple React + TypeScript application that renders colorful cubes in a line using Three.js. 
 
 ## Project Structure
 
 ```
 src/
-├── App.tsx                    # Main app component
+├── App.tsx                    # Main app component with state management
 ├── App.css                    # App styles
 ├── main.tsx                   # React entry point
 ├── components/
-│   └── ThreeScene.tsx         # React wrapper for Three.js
+│   ├── ThreeScene.tsx         # React wrapper for Three.js
 └── three/
-    └── CubeScene.ts           # Three.js scene logic
+    └── CubeScene.ts           # Three.js scene logic with dynamic spacing
 ```
 
 ## Getting Started
