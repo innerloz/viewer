@@ -2,12 +2,12 @@ Coding Tasks:
 
 1. Create a menu (designed to work well on mobile) - the menu should have a show hide button and allows the user to adjust settings whilst seeing the animation.
  - The menu should have a slider to adjust the number of cubes.
- - The menu should user to select the from the following color schemes:
+ - The menu should allow user to select the from the following color schemes:
   - Random
   - Rainbow
   - All cubes the same colour - with added option to allow the user to select the colour.
 
-2. Add playwright tests to test the application.
+2. Add tests to test the application (ideally also the UI).
 
 3. Update the README.md file to include the new features.
 
