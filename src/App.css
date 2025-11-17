@@ -1,7 +1,7 @@
 .app {
   width: 100vw;
   height: 100vh;
-  height: 100dvh; /* Use dynamic viewport height for mobile */
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -38,10 +38,9 @@
   position: relative;
   overflow: hidden;
   background: #0f0f1e;
-  min-height: 0; /* Important for flex container */
+  min-height: 0;
 }
 
-/* Mobile responsive styles */
 @media (max-width: 768px) {
   .header {
     padding: 1rem 1rem;

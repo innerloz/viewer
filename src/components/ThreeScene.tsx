@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { CubeScene } from '../three/CubeScene';
+import { useCubeSettings } from '../context/CubeSettingsContext';
 
 export const ThreeScene = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<CubeScene | null>(null);
+  const { settings } = useCubeSettings();
 
   useEffect(() => {
     if (!canvasRef.current) return;
 
-    // Initialize the Three.js scene
-    sceneRef.current = new CubeScene(canvasRef.current);
+    sceneRef.current = new CubeScene(canvasRef.current, settings);
 
     // Cleanup on unmount
     return () => {
@@ -18,7 +19,14 @@ export const ThreeScene = () => {
         sceneRef.current = null;
       }
     };
-  }, []);
+  }, []); // Only run once on mount
+
+  // Update scene when settings change
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.updateSettings(settings);
+    }
+  }, [settings]);
 
   return (
     <canvas
