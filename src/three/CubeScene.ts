@@ -61,14 +61,12 @@ export class CubeScene {
       0xff9f43, 
       0xfeca57, 
       0x1dd1a1, 
-      0x0abde3, 
-      0x5f27cd, 
     ];
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);
 
     // Position cubes from -7 to 7 on x-axis (2 units apart)
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       const material = new THREE.MeshStandardMaterial({ color: colors[i] });
       const cube = new THREE.Mesh(geometry, material);
       
