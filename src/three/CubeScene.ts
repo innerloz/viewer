@@ -7,6 +7,7 @@ export class CubeScene {
   private cubes: THREE.Mesh[] = [];
   private animationId: number | null = null;
   private resizeObserver: ResizeObserver | null = null;
+  private rotationSpeed: number = 1.0;
 
   constructor(canvas: HTMLCanvasElement) {
     // Create scene
@@ -84,10 +85,11 @@ export class CubeScene {
   private animate = (): void => {
     this.animationId = requestAnimationFrame(this.animate);
 
-    // Rotate each cube
+    // Rotate each cube with adjustable speed
+    const rotationDelta = 0.01 * this.rotationSpeed;
     this.cubes.forEach((cube) => {
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
+      cube.rotation.x += rotationDelta;
+      cube.rotation.y += rotationDelta;
     });
 
     this.renderer.render(this.scene, this.camera);
@@ -118,6 +120,10 @@ export class CubeScene {
     this.renderer.setSize(width, height, false);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   };
+
+  public setRotationSpeed(speed: number): void {
+    this.rotationSpeed = speed;
+  }
 
   public dispose(): void {
     // Stop animation

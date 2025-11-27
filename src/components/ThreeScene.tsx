@@ -1,7 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { CubeScene } from '../three/CubeScene';
 
-export const ThreeScene = () => {
+interface ThreeSceneProps {
+  rotationSpeed: number;
+}
+
+export const ThreeScene = ({ rotationSpeed }: ThreeSceneProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<CubeScene | null>(null);
 
@@ -19,6 +23,13 @@ export const ThreeScene = () => {
       }
     };
   }, []);
+
+  // Update rotation speed when it changes
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setRotationSpeed(rotationSpeed);
+    }
+  }, [rotationSpeed]);
 
   return (
     <canvas
