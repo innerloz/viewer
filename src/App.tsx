@@ -6,6 +6,7 @@ import './App.css';
 
 function App() {
   const [rotationSpeed, setRotationSpeed] = useState(1.0);
+  const [cubesVisible, setCubesVisible] = useState(true);
 
   return (
     <div className="app">
@@ -21,7 +22,7 @@ function App() {
         </div>
       </header>
       <main className="scene-container">
-        <ThreeScene rotationSpeed={rotationSpeed} />
+        <ThreeScene rotationSpeed={rotationSpeed} cubesVisible={cubesVisible} />
         <div className="speed-control">
           <label htmlFor="speed-slider">
             Rotation Speed: <strong>{rotationSpeed.toFixed(1)}x</strong>
@@ -39,6 +40,18 @@ function App() {
             <span>0x</span>
             <span>1.5x</span>
             <span>3x</span>
+          </div>
+          
+          <div className="visibility-control">
+            <label htmlFor="cubes-visible" className="checkbox-label">
+              <input
+                id="cubes-visible"
+                type="checkbox"
+                checked={cubesVisible}
+                onChange={(e) => setCubesVisible(e.target.checked)}
+              />
+              <span>Show Cubes</span>
+            </label>
           </div>
         </div>
       </main>

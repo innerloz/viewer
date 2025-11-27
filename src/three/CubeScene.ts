@@ -125,6 +125,12 @@ export class CubeScene {
     this.rotationSpeed = speed;
   }
 
+  public setCubesVisible(visible: boolean): void {
+    this.cubes.forEach((cube) => {
+      cube.visible = visible;
+    });
+  }
+
   public dispose(): void {
     // Stop animation
     if (this.animationId !== null) {

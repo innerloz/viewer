@@ -3,9 +3,10 @@ import { CubeScene } from '../three/CubeScene';
 
 interface ThreeSceneProps {
   rotationSpeed: number;
+  cubesVisible: boolean;
 }
 
-export const ThreeScene = ({ rotationSpeed }: ThreeSceneProps) => {
+export const ThreeScene = ({ rotationSpeed, cubesVisible }: ThreeSceneProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<CubeScene | null>(null);
 
@@ -30,6 +31,13 @@ export const ThreeScene = ({ rotationSpeed }: ThreeSceneProps) => {
       sceneRef.current.setRotationSpeed(rotationSpeed);
     }
   }, [rotationSpeed]);
+
+  // Update cube visibility when it changes
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setCubesVisible(cubesVisible);
+    }
+  }, [cubesVisible]);
 
   return (
     <canvas
