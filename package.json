@@ -1,13 +1,21 @@
 {
   "name": "innersight-viewer",
   "private": true,
-  "version": "0.0.1",
+  "version": "2.1.0-MDR",
+  "description": "CE Marked Medical Device Viewer - MDR 2017/745 Class I",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "keywords": [
+    "medical-device",
+    "ce-marked",
+    "mdr",
+    "visualization",
+    "three.js"
+  ],
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

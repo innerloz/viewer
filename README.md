@@ -1,6 +1,12 @@
-# Cube Viewer
+# Cube Viewer - CE MDR Version
 
-A simple React + TypeScript application that renders colorful cubes in a line using Three.js. 
+A React + TypeScript 3D visualization application using Three.js.
+
+**Version:** 2.1.0-MDR  
+**Certification:** CE Marked Medical Device (MDR 2017/745, Class I)  
+**Status:** For professional medical use only
+
+> This is a CE marked medical device viewer compliant with the European Medical Device Regulation (MDR 2017/745). 
 
 ## Project Structure
 
@@ -49,4 +55,21 @@ npm run preview
 - **TypeScript** - Type safety
 - **Three.js** - 3D graphics
 - **Vite** - Build tool and dev server
+
+## Regulatory Information
+
+### CE Marking
+This software is CE marked as a Class I medical device under the Medical Device Regulation (EU) 2017/745.
+
+### Intended Use
+This application is intended for professional medical visualization purposes by qualified healthcare professionals.
+
+### Version History
+- **v2.1.0-MDR** - Current CE certified release
+- Compliant with MDR 2017/745
+- For professional use in clinical environments
+
+### Warnings
+⚠️ This device is intended for use by trained medical professionals only.  
+⚠️ Not for consumer or home use.
 
