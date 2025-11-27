@@ -1,5 +1,6 @@
 import { ThreeScene } from './components/ThreeScene';
-import { VERSION_INFO, CERTIFICATION_TEXT } from './constants/version';
+//import { VERSION_INFO, CERTIFICATION_TEXT } from './constants/version';
+
 import './App.css';
 
 function App() {
@@ -8,15 +9,18 @@ function App() {
       <header className="header">
         <div className="header-content">
           <h1>Cube Viewer</h1>
+          {/*
           <div className="certification-badge">
             <span className="ce-mark">{VERSION_INFO.ceMark}</span>
             <span className="version">v{VERSION_INFO.version}</span>
           </div>
+          */}
         </div>
       </header>
       <main className="scene-container">
         <ThreeScene />
       </main>
+      {/*
       <footer className="footer">
         <div className="footer-content">
           <span className="certification-text">
@@ -27,6 +31,7 @@ function App() {
           </span>
         </div>
       </footer>
+      */}
     </div>
   );
 }
